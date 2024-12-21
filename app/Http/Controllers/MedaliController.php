@@ -38,6 +38,7 @@ class MedaliController extends Controller
             'nama_atlet' => $request->nama_atlet,
             'jk' => $request->jk,
             'cabang' => $request->cabang,
+            'golongan' => $request->golongan,
             'kategori' => $request->kategori,
             'kelas_tanding' => $request->kelas_tanding,
             'medali' => $request->medali,
@@ -61,7 +62,9 @@ class MedaliController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $medali = Medali::find($id);
+
+        return view('medali.medali-edit', compact('medali'));
     }
 
     /**
@@ -69,7 +72,19 @@ class MedaliController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $medali = [
+            'nama_atlet' => $request->nama_atlet,
+            'jk' => $request->jk,
+            'cabang' => $request->cabang,
+            'golongan' => $request->golongan,
+            'kategori' => $request->kategori,
+            'kelas_tanding' => $request->kelas_tanding,
+            'medali' => $request->medali,
+        ];
+
+        Medali::where('id', $id)->update($medali);
+
+        return redirect('/');
     }
 
     /**

@@ -38,17 +38,18 @@
         <hr>
         <section>
 
-            <div class="d-flex justify-content-end">
-                <a href="{{ url('/create') }}" class="btn btn-sm btn-primary">Tambah</a>
+            <div class="d-flex justify-content-end my-3">
+                <a href="{{ url('/medali/create') }}" class="btn btn-sm btn-primary">Tambah</a>
             </div>
 
             <div class="table-responsive">
-                <table class="table table-sm">
+                <table class="table table-sm table-striped table-hover table-bordered">
                     <thead>
-                        <tr class="text-center">
+                        <tr class="text-center align-middle">
                             <th rowspan="2">No.</th>
                             <th rowspan="2">Nama Atlet</th>
                             <th rowspan="2">JK</th>
+                            <th rowspan="2">Golongan</th>
                             <th rowspan="2">Kategori</th>
                             <th rowspan="2">KelasTanding</th>
                             <th rowspan="2">Cabang</th>
@@ -56,9 +57,9 @@
                             <th rowspan="2">Aksi</th>
                         </tr>
                         <tr class="text-center">
-                            <th>Emas</th>
-                            <th>Perak</th>
-                            <th>Perunggu</th>
+                            <th class="text-bg-warning">E</th>
+                            <th class="text-bg-secondary">P</th>
+                            <th style="background-color: #945d41">P</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -70,15 +71,16 @@
                                 <td>{{ $i++ }}</td>
                                 <td>{{ $item->nama_atlet }}</td>
                                 <td>{{ $item->jk }}</td>
+                                <td>{{ $item->golongan }}</td>
                                 <td>{{ $item->kategori }}</td>
                                 <td>{{ $item->kelas_tanding }}</td>
                                 <td>{{ $item->cabang }}</td>
-                                <td class="text-center">{{ $item->medali === 1 ? 'Emas' : '' }}</td>
-                                <td class="text-center">{{ $item->medali === 2 ? 'Perak' : '' }}</td>
-                                <td class="text-center">{{ $item->medali === 3 ? 'Perunggu' : '' }}</td>
+                                <td class="text-center">{{ $item->medali === 1 ? '1' : '' }}</td>
+                                <td class="text-center">{{ $item->medali === 2 ? '1' : '' }}</td>
+                                <td class="text-center">{{ $item->medali === 3 ? '1' : '' }}</td>
                                 <td>
-                                    <button class="btn btn-sm btn-warning">Edit</button>
-                                    <form action="{{ url('/' . $item->id) }}" method="post" class="d-inline">
+                                    <a href="{{ url('/medali/' . $item->id . '/edit') }}" class="btn btn-sm btn-warning">Edit</a>
+                                    <form action="{{ url('/medali/' . $item->id) }}" method="post" class="d-inline">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Yakin ingin HAPUS?')">Hapus</button>
@@ -86,7 +88,7 @@
                                 </td>
                             </tr>
                         @empty
-                            <div class="alert alert-info">Belum ada data!</div>
+                            <div class="alert alert-info my-2">Belum ada data!</div>
                         @endforelse
                     </tbody>
                 </table>

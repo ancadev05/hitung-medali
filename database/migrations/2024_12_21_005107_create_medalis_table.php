@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('nama_atlet');
             $table->string('jk');
             $table->string('cabang');
+            $table->string('golongan');
             $table->string('kategori');
             $table->string('kelas_tanding');
             $table->integer('medali');
