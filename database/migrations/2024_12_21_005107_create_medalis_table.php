@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('medalis', function (Blueprint $table) {
             $table->id();
+            $table->string('nama_atlet');
+            $table->string('jk');
+            $table->string('cabang');
+            $table->string('kategori');
+            $table->string('kelas_tanding');
+            $table->integer('medali');
             $table->timestamps();
         });
     }

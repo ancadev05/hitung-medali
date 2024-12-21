@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Medali;
 use Illuminate\Http\Request;
 
 class MedaliController extends Controller
@@ -11,7 +12,13 @@ class MedaliController extends Controller
      */
     public function index()
     {
-        return view('medali.medali-index');
+        $medalis = Medali::all();
+
+        $emas = $medalis->where('medali', 1)->count();
+        $perak = $medalis->where('medali', 2)->count();
+        $perunggu = $medalis->where('medali', 3)->count();
+
+        return view('medali.medali-index', compact('medalis', 'emas', 'perak', 'perunggu'));
     }
 
     /**
@@ -19,7 +26,7 @@ class MedaliController extends Controller
      */
     public function create()
     {
-        //
+        return view('medali.medali-create');
     }
 
     /**
@@ -27,7 +34,18 @@ class MedaliController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $medali = [
+            'nama_atlet' => $request->nama_atlet,
+            'jk' => $request->jk,
+            'cabang' => $request->cabang,
+            'kategori' => $request->kategori,
+            'kelas_tanding' => $request->kelas_tanding,
+            'medali' => $request->medali,
+        ];
+
+        Medali::create($medali);
+
+        return redirect('/');
     }
 
     /**
@@ -59,6 +77,9 @@ class MedaliController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $medali = Medali::find($id);
+        $medali->delete();
+
+        return redirect('/');
     }
 }
