@@ -18,19 +18,19 @@
                 <div class="col">
                     <div class="card p-2 text-bg-warning text-center">
                         <h4>Emas :</h2>
-                        <h3>{{ $emas }}</h3>
+                            <h3>{{ $emas }}</h3>
                     </div>
                 </div>
                 <div class="col">
                     <div class="card p-2 text-bg-secondary text-center">
                         <h4>Perak :</h2>
-                        <h3>{{ $perak }}</h3>
+                            <h3>{{ $perak }}</h3>
                     </div>
                 </div>
                 <div class="col">
                     <div class="card p-2 text-center text-white" style="background-color: #945d41">
                         <h4>Perunggu :</h2>
-                        <h3>{{ $perunggu }}</h3>
+                            <h3>{{ $perunggu }}</h3>
                     </div>
                 </div>
             </div>
@@ -43,23 +43,23 @@
             </div>
 
             <div class="table-responsive">
-                <table class="table table-sm table-striped table-hover table-bordered">
+                <table class="table table-sm table-striped table-hover table-bordered" id="datatables">
                     <thead>
-                        <tr class="text-center align-middle">
-                            <th rowspan="2">No.</th>
-                            <th rowspan="2">Nama Atlet</th>
-                            <th rowspan="2">JK</th>
-                            <th rowspan="2">Golongan</th>
-                            <th rowspan="2">Kategori</th>
-                            <th rowspan="2">KelasTanding</th>
-                            <th rowspan="2">Cabang</th>
-                            <th colspan="3">Medali</th>
-                            <th rowspan="2">Aksi</th>
+                        <tr class="align-middle">
+                            <th class="text-center" rowspan="2">No.</th>
+                            <th class="text-center" rowspan="2">Nama Atlet</th>
+                            <th class="text-center" rowspan="2">JK</th>
+                            <th class="text-center" rowspan="2">Golongan</th>
+                            <th class="text-center" rowspan="2">Kategori</th>
+                            <th class="text-center" rowspan="2">KelasTanding</th>
+                            <th class="text-center" rowspan="2">Cabang</th>
+                            <th class="text-center" colspan="3">Medali</th>
+                            <th class="text-center" rowspan="2">Aksi</th>
                         </tr>
                         <tr class="text-center">
-                            <th class="text-bg-warning">E</th>
-                            <th class="text-bg-secondary">P</th>
-                            <th style="background-color: #945d41">P</th>
+                            <th class="text-center text-bg-warning">E</th>
+                            <th class="text-center text-bg-secondary">P</th>
+                            <th class="text-center" style="background-color: #945d41">P</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -79,11 +79,13 @@
                                 <td class="text-center">{{ $item->medali === 2 ? '1' : '' }}</td>
                                 <td class="text-center">{{ $item->medali === 3 ? '1' : '' }}</td>
                                 <td>
-                                    <a href="{{ url('/medali/' . $item->id . '/edit') }}" class="btn btn-sm btn-warning">Edit</a>
+                                    <a href="{{ url('/medali/' . $item->id . '/edit') }}"
+                                        class="btn btn-sm btn-warning">Edit</a>
                                     <form action="{{ url('/medali/' . $item->id) }}" method="post" class="d-inline">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Yakin ingin HAPUS?')">Hapus</button>
+                                        <button type="submit" class="btn btn-sm btn-danger"
+                                            onclick="return confirm('Yakin ingin HAPUS?')">Hapus</button>
                                     </form>
                                 </td>
                             </tr>
@@ -95,4 +97,18 @@
             </div>
         </section>
     </div>
+@endsection
+
+@section('script')
+    <script>
+        $(document).ready(function() {
+            $('#datatables').DataTable({
+                layout: {
+                    top: {
+                        buttons: ["excel"],
+                    },
+                }
+            });
+        });
+    </script>
 @endsection
