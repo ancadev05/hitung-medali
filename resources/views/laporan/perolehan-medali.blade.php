@@ -50,10 +50,10 @@
                                 <span class="btn btn-sm btn-outline-light">Pg : {{ $usia_dini_3 }}</span>
                             </div>
                             <hr>
-                            <div class="d-flex">
+                            <div class="d-flex justify-content-center">
                                 <div>
                                     <h5>PA</h5>
-                                    <div class="d-flex justify-content-center">
+                                    <div class="btn-group">
                                         <span class="btn btn-sm btn-outline-light">Em: {{ $usia_dini_l_1 }}</span>
                                         <span class="btn btn-sm btn-outline-light">Pr: {{ $usia_dini_l_2 }}</span>
                                         <span class="btn btn-sm btn-outline-light">Pg: {{ $usia_dini_l_3 }}</span>
@@ -62,7 +62,7 @@
                                 <span>|</span>
                                 <div>
                                     <h5>PI</h5>
-                                    <div class="d-flex justify-content-center">
+                                    <div class="btn-group">
                                         <span class="btn btn-sm btn-outline-light">Em: {{ $usia_dini_p_1 }}</span>
                                         <span class="btn btn-sm btn-outline-light">Pr: {{ $usia_dini_p_2 }}</span>
                                         <span class="btn btn-sm btn-outline-light">Pg: {{ $usia_dini_p_3 }}</span>
@@ -81,19 +81,19 @@
                                 <span class="btn btn-sm btn-outline-light">Pg : {{ $pra_remaja_3 }}</span>
                             </div>
                             <hr>
-                            <div class="d-flex">
+                            <div class="d-flex justify-content-center">
                                 <div>
                                     <h5>PA</h5>
-                                    <div class="d-flex justify-content-center">
+                                    <div class="btn-group">
                                         <span class="btn btn-sm btn-outline-light">Em: {{ $pra_remaja_l_1 }}</span>
                                         <span class="btn btn-sm btn-outline-light">Pr: {{ $pra_remaja_l_2 }}</span>
                                         <span class="btn btn-sm btn-outline-light">Pg: {{ $pra_remaja_l_3 }}</span>
                                     </div>
                                 </div>
-                                <span>|</span>
+                                <span> | </span>
                                 <div>
                                     <h5>PI</h5>
-                                    <div class="d-flex justify-content-center">
+                                    <div class="btn-group">
                                         <span class="btn btn-sm btn-outline-light">Em: {{ $pra_remaja_p_1 }}</span>
                                         <span class="btn btn-sm btn-outline-light">Pr: {{ $pra_remaja_p_2 }}</span>
                                         <span class="btn btn-sm btn-outline-light">Pg: {{ $pra_remaja_p_3 }}</span>
@@ -112,10 +112,10 @@
                                 <span class="btn btn-sm btn-outline-light">Pg : {{ $remaja_3 }}</span>
                             </div>
                             <hr>
-                            <div class="d-flex">
+                            <div class="d-flex justify-content-center">
                                 <div>
                                     <h5>PA</h5>
-                                    <div class="d-flex justify-content-center">
+                                    <div class="btn-group">
                                         <span class="btn btn-sm btn-outline-light">Em: {{ $remaja_l_1 }}</span>
                                         <span class="btn btn-sm btn-outline-light">Pr: {{ $remaja_l_2 }}</span>
                                         <span class="btn btn-sm btn-outline-light">Pg: {{ $remaja_l_3 }}</span>
@@ -124,7 +124,7 @@
                                 <span>|</span>
                                 <div>
                                     <h5>PI</h5>
-                                    <div class="d-flex justify-content-center">
+                                    <div class="btn-group">
                                         <span class="btn btn-sm btn-outline-light">Em: {{ $remaja_p_1 }}</span>
                                         <span class="btn btn-sm btn-outline-light">Pr: {{ $remaja_p_2 }}</span>
                                         <span class="btn btn-sm btn-outline-light">Pg: {{ $remaja_p_3 }}</span>
@@ -143,10 +143,10 @@
                                 <span class="btn btn-sm btn-outline-light">Pg : {{ $dewasa_3 }}</span>
                             </div>
                             <hr>
-                            <div class="d-flex">
+                            <div class="d-flex justify-content-center">
                                 <div>
                                     <h5>PA</h5>
-                                    <div class="d-flex justify-content-center">
+                                    <div class="btn-group">
                                         <span class="btn btn-sm btn-outline-light">Em: {{ $dewasa_l_1 }}</span>
                                         <span class="btn btn-sm btn-outline-light">Pr: {{ $dewasa_l_2 }}</span>
                                         <span class="btn btn-sm btn-outline-light">Pg: {{ $dewasa_l_3 }}</span>
@@ -155,7 +155,7 @@
                                 <span>|</span>
                                 <div>
                                     <h5>PI</h5>
-                                    <div class="d-flex justify-content-center">
+                                    <div class="btn-group">
                                         <span class="btn btn-sm btn-outline-light">Em: {{ $dewasa_p_1 }}</span>
                                         <span class="btn btn-sm btn-outline-light">Pr: {{ $dewasa_p_2 }}</span>
                                         <span class="btn btn-sm btn-outline-light">Pg: {{ $dewasa_p_3 }}</span>
