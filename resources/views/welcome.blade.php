@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,12 +19,40 @@
     {{-- select2 --}}
     <link rel="stylesheet" href="{{ asset('vendor/select2/css/select2.min.css') }}" rel="stylesheet">
 </head>
+
 <body>
+
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container">
+            {{-- <a class="navbar-brand" href="#">Navbar</a> --}}
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link {{ Request::is('medali') ? 'active' : '' }}" href="{{ url('/medali') }}">Medali</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ Request::is('laporan') ? 'active' : '' }}" href="{{ url('/laporan') }}">Laporan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ Request::is('atlet') ? 'active' : '' }}" href="{{ url('/atlet') }}">Atlet</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
     @yield('content')
 
     {{-- jquery --}}
     <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
-    
+
+    {{-- bootstrap --}}
+    <script src="{{ asset('vendor/bootstrap5/js/bootstrap.bundle.min.js') }}"></script>
+
     {{-- datatables --}}
     <script src="{{ asset('vendor/datatables/datatables.js') }}"></script>
     <script src="{{ asset('vendor/datatables/datatables-button.js') }}"></script>
@@ -43,4 +72,5 @@
     <script src="{{ asset('vendor/select2/js/select2.min.js') }}"></script>
     @yield('script')
 </body>
+
 </html>

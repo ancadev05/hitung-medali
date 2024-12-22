@@ -2,41 +2,10 @@
 
 @section('content')
     <div class="container">
-        <section class="text-center mt-2">
-            <h5 class="m-0 p-0">PEROLEHAN MEDALI</h5>
-            <h5 class="m-0 p-0">KONTINGEN TAPAK SUCI GOWA</h5>
-            <h5 class="m-0 p-0">KEJUARAAN PENCAK SILAT MAKASSAR CHAMPIONSHIP III</h5>
-        </section>
-        <hr>
+        <section class="mt-2">
 
-        <section class="mb-3">
-            <div class="card text-bg-success p-2 text-center mb-2">
-                <h4>Total Medali</h4>
-                <h3>{{ $medalis->count() }}</h3>
-            </div>
-            <div class="row row-cols-2 row-cols-md-3 g-3">
-                <div class="col">
-                    <div class="card p-2 text-bg-warning text-center">
-                        <h4>Emas :</h2>
-                            <h3>{{ $emas }}</h3>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card p-2 text-bg-secondary text-center">
-                        <h4>Perak :</h2>
-                            <h3>{{ $perak }}</h3>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card p-2 text-center text-white" style="background-color: #945d41">
-                        <h4>Perunggu :</h2>
-                            <h3>{{ $perunggu }}</h3>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <hr>
-        <section>
+            <h5 class="text-center">DAFTAR ATLET PEROLEH MEDALI</h5>
+            <hr>
 
             <div class="d-flex justify-content-end my-3">
                 <a href="{{ url('/medali/create') }}" class="btn btn-sm btn-primary">Tambah</a>
@@ -80,11 +49,11 @@
                                 <td class="text-center">{{ $item->medali === 3 ? '1' : '' }}</td>
                                 <td>
                                     <a href="{{ url('/medali/' . $item->id . '/edit') }}"
-                                        class="btn btn-sm btn-warning">Edit</a>
+                                        class="btn btn-sm btn-warning mb-1">Edit</a>
                                     <form action="{{ url('/medali/' . $item->id) }}" method="post" class="d-inline">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-sm btn-danger"
+                                        <button type="submit" class="btn btn-sm btn-danger mb-1"
                                             onclick="return confirm('Yakin ingin HAPUS?')">Hapus</button>
                                     </form>
                                 </td>

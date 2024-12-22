@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DataAtletController;
+use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\MedaliController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,3 +22,6 @@ Route::get('/', function () {
 
 Route::resource('/medali', MedaliController::class);
 Route::get('/get-data-atlet', [DataAtletController::class, 'dataAtlet']);
+
+Route::get('/laporan', [LaporanController::class, 'laporan']);
+Route::get('/atlet', [DataAtletController::class, 'atlet']);

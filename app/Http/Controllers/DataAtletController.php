@@ -15,4 +15,10 @@ class DataAtletController extends Controller
             'dataAtlet' => $atlet,
         ]);
     }
+
+    public function atlet()
+    {
+        $atlets = atlet::all();
+        return view('atlet.atlet-index', compact('atlets'));
+    }
 }
