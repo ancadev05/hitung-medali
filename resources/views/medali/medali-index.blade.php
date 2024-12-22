@@ -44,9 +44,9 @@
                                 <td>{{ $item->kategori }}</td>
                                 <td>{{ $item->kelas_tanding }}</td>
                                 <td>{{ $item->cabang }}</td>
-                                <td class="text-center">{{ $item->medali === 1 ? '1' : '' }}</td>
-                                <td class="text-center">{{ $item->medali === 2 ? '1' : '' }}</td>
-                                <td class="text-center">{{ $item->medali === 3 ? '1' : '' }}</td>
+                                <td class="text-center">{{ $item->medali == 1 ? '1' : '' }}</td>
+                                <td class="text-center">{{ $item->medali == 2 ? '1' : '' }}</td>
+                                <td class="text-center">{{ $item->medali == 3 ? '1' : '' }}</td>
                                 <td>
                                     <a href="{{ url('/medali/' . $item->id . '/edit') }}"
                                         class="btn btn-sm btn-warning mb-1">Edit</a>
