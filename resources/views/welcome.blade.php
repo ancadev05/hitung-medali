@@ -14,6 +14,9 @@
     <link rel="stylesheet" href="{{ asset('vendor/datatables/Buttons-2.4.2/css/buttons.bootstrap5.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/datatables/DataTables-1.13.8/css/dataTables.bootstrap5.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/datatables/Responsive-2.5.0/css/responsive.bootstrap5.css') }}">
+
+    {{-- select2 --}}
+    <link rel="stylesheet" href="{{ asset('vendor/select2/css/select2.min.css') }}" rel="stylesheet">
 </head>
 <body>
     @yield('content')
@@ -35,6 +38,9 @@
     <script src="{{ asset('vendor/datatables/pdfmake-0.2.7/vfs_fonts.js') }}"></script>
     <script src="{{ asset('vendor/datatables/Responsive-2.5.0/js/dataTables.responsive.js') }}"></script>
     <script src="{{ asset('vendor/datatables/Responsive-2.5.0/js/responsive.bootstrap5.js') }}"></script>
+
+    {{-- select2 --}}
+    <script src="{{ asset('vendor/select2/js/select2.min.js') }}"></script>
     @yield('script')
 </body>
 </html>

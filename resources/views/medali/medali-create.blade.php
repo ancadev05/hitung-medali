@@ -11,43 +11,35 @@
                     <div class="col">
                         <div class="mb-3">
                             <label for="nama_atlet" class="form-label">Nama Atlet</label>
-                            <input type="text" class="form-control" id="nama_atlet" name="nama_atlet" required>
+                            <select class="form-select select2" id="cari_atlet" name="cari_atlet" required>
+                                <option value="" selected>---</option>
+                                @foreach ($atlets as $item)
+                                    <option value="{{ $item->id }}">#{{ $item->id . ' | ' . $item->nama_atlet }}</option>
+                                @endforeach
+                            </select>
+                            <input type="hidden" class="form-control" id="nama_atlet" name="nama_atlet" readonly>
                         </div>
                         <div class="mb-3">
                             <label for="jk" class="form-label">Jenis Kelamin</label>
-                            <select class="form-select" id="jk" name="jk" required>
-                                <option value="" selected>---</option>
-                                <option value="L">Laki-Laki</option>
-                                <option value="P">Perempuan</option>
-                            </select>
+                            <input type="text" class="form-control" id="jk" name="jk" readonly>
                         </div>
                         <div class="mb-3">
                             <label for="cabang" class="form-label">Cabang</label>
-                            <input type="text" class="form-control" id="cabang" name="cabang" required>
+                            <input type="text" class="form-control" id="cabang" name="cabang" readonly>
                         </div>
                         <div class="mb-3">
                             <label for="golongan" class="form-label">Golongan</label>
-                            <select class="form-select" id="golongan" name="golongan" required>
-                                <option value="" selected>---</option>
-                                <option value="Usia Dini">Usia Dini</option>
-                                <option value="Pra Remaja">Pra Remaja</option>
-                                <option value="Remaja">Remaja</option>
-                                <option value="Dewasa">Dewasa</option>
-                            </select>
+                            <input type="text" class="form-control" id="golongan" name="golongan" readonly>
                         </div>
                     </div>
                     <div class="col">
                         <div class="mb-3">
                             <label for="kategori" class="form-label">Kategori</label>
-                            <select class="form-select" id="kategori" name="kategori" required>
-                                <option value="" selected>---</option>
-                                <option value="Tanding">Tanding</option>
-                                <option value="Seni">Seni</option>
-                            </select>
+                            <input type="text" class="form-control" id="kategori" name="kategori" readonly>
                         </div>
                         <div class="mb-3">
                             <label for="kelas_tanding" class="form-label">Kelas Tanding</label>
-                            <input type="text" class="form-control" id="kelas_tanding" name="kelas_tanding" required>
+                            <input type="text" class="form-control" id="kelas_tanding" name="kelas_tanding" readonly>
                         </div>
                         <div class="mb-3">
                             <label for="medali" class="form-label">Medali</label>
@@ -69,4 +61,36 @@
             </form>
         </section>
     </div>
+@endsection
+
+@section('script')
+    <script>
+        $(document).ready(function() {
+            $('.select2').select2();
+
+            // mengambil data atlet
+            $('#cari_atlet').on('change', function() {
+                var idAtlet = $(this).val();
+
+                $.ajax({
+                    url: "{{ url('/get-data-atlet') }}",
+                    method: 'get',
+                    data: {
+                        idAtlet: idAtlet
+                    },
+                    success: function(data) {
+                        $('#nama_atlet').val(data.dataAtlet.nama_atlet);
+                        $('#jk').val(data.dataAtlet.jk);
+                        $('#cabang').val(data.dataAtlet.cabang);
+                        $('#golongan').val(data.dataAtlet.golongan);
+                        $('#kategori').val(data.dataAtlet.kategori);
+                        $('#kelas_tanding').val(data.dataAtlet.kelas_tanding);
+                    },
+                    error: function(xhr, status, error) {
+                        console.error('Terjadi kesalahan:', error);
+                    }
+                });
+            });
+        });
+    </script>
 @endsection

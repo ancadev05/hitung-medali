@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\atlet;
 use App\Models\Medali;
 use Illuminate\Http\Request;
 
@@ -26,7 +27,8 @@ class MedaliController extends Controller
      */
     public function create()
     {
-        return view('medali.medali-create');
+        $atlets = atlet::all();
+        return view('medali.medali-create', compact('atlets'));
     }
 
     /**
@@ -73,12 +75,6 @@ class MedaliController extends Controller
     public function update(Request $request, string $id)
     {
         $medali = [
-            'nama_atlet' => $request->nama_atlet,
-            'jk' => $request->jk,
-            'cabang' => $request->cabang,
-            'golongan' => $request->golongan,
-            'kategori' => $request->kategori,
-            'kelas_tanding' => $request->kelas_tanding,
             'medali' => $request->medali,
         ];
 

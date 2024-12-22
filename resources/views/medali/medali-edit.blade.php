@@ -12,22 +12,22 @@
                     <div class="col">
                         <div class="mb-3">
                             <label for="nama_atlet" class="form-label">Nama Atlet</label>
-                            <input type="text" class="form-control" id="nama_atlet" name="nama_atlet" value="{{ $medali->nama_atlet }}" required>
+                            <input type="text" class="form-control" id="nama_atlet" name="nama_atlet" value="{{ $medali->nama_atlet }}" disabled>
                         </div>
                         <div class="mb-3">
                             <label for="jk" class="form-label">Jenis Kelamin</label>
-                            <select class="form-select" id="jk" name="jk" required>
+                            <select class="form-select" id="jk" name="jk" disabled>
                                 <option value="L" {{ $medali->jk == 'L' ? 'selected' : '' }}>Laki-Laki</option>
                                 <option value="P" {{ $medali->jk == 'P' ? 'selected' : '' }}>Perempuan</option>
                             </select>
                         </div>
                         <div class="mb-3">
                             <label for="cabang" class="form-label">Cabang</label>
-                            <input type="text" class="form-control" id="cabang" name="cabang" value="{{ $medali->cabang }}" required>
+                            <input type="text" class="form-control" id="cabang" name="cabang" value="{{ $medali->cabang }}" disabled>
                         </div>
                         <div class="mb-3">
                             <label for="golongan" class="form-label">Golongan</label>
-                            <select class="form-select" id="golongan" name="golongan" required>
+                            <select class="form-select" id="golongan" name="golongan" disabled>
                                 <option value="Usia Dini" {{ $medali->golongan == 'Usia Dini' ? 'selected' : '' }}>Usia Dini</option>
                                 <option value="Pra Remaja" {{ $medali->golongan == 'Pra Remaja' ? 'selected' : '' }}>Pra Remaja</option>
                                 <option value="Remaja" {{ $medali->golongan == 'Remaja' ? 'selected' : '' }}>Remaja</option>
@@ -38,14 +38,14 @@
                     <div class="col">
                         <div class="mb-3">
                             <label for="kategori" class="form-label">Kategori</label>
-                            <select class="form-select" id="kategori" name="kategori" required>
+                            <select class="form-select" id="kategori" name="kategori" disabled>
                                 <option value="Tanding" {{ $medali->kategori == 'tanding' ? 'selected' : '' }}>Tanding</option>
                                 <option value="Seni" {{ $medali->kategori == 'seni' ? 'selected' : '' }}>Seni</option>
                             </select>
                         </div>
                         <div class="mb-3">
                             <label for="kelas_tanding" class="form-label">Kelas Tanding</label>
-                            <input type="text" class="form-control" id="kelas_tanding" name="kelas_tanding" value="{{ $medali->kelas_tanding }}" required>
+                            <input type="text" class="form-control" id="kelas_tanding" name="kelas_tanding" value="{{ $medali->kelas_tanding }}" disabled>
                         </div>
                         <div class="mb-3">
                             <label for="medali" class="form-label">Medali</label>
