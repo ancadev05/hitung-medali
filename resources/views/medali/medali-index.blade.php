@@ -22,7 +22,7 @@
                 </div>
             @else
                 <div class="alert alert-success">
-                    OTW Jemput kekasih (Juara Umum)
+                    OTW Jemput Kekasih (Juara Umum)
                 </div>
             @endif
 
