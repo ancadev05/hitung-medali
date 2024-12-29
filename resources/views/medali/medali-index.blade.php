@@ -11,6 +11,22 @@
                 <a href="{{ url('/medali/create') }}" class="btn btn-sm btn-primary">Tambah</a>
             </div>
 
+            @if ($duplicates->isNotEmpty())
+                <div class="alert alert-danger">
+                    <strong>Data Duplicates Ditemukan!</strong>
+                    <ul>
+                        @foreach ($duplicates as $duplicate)
+                            <li>{{ $duplicate->nama_atlet }} - {{ $duplicate->jk }} - {{ $duplicate->cabang }} -
+                                {{ $duplicate->golongan }} - {{ $duplicate->kategori }} - {{ $duplicate->kelas_tanding }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @else
+                <div class="alert alert-success">
+                    Tidak ada data duplicate.
+                </div>
+            @endif
+
             <div class="table-responsive">
                 <table class="table table-sm table-striped table-hover table-bordered" id="datatables">
                     <thead>

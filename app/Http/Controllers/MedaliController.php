@@ -19,7 +19,13 @@ class MedaliController extends Controller
         $perak = $medalis->where('medali', 2)->count();
         $perunggu = $medalis->where('medali', 3)->count();
 
-        return view('medali.medali-index', compact('medalis', 'emas', 'perak', 'perunggu'));
+        // Mengambil data yang memiliki nilai kolom yang sama
+        $duplicates = Medali::select('nama_atlet', 'jk', 'cabang', 'golongan', 'kategori', 'kelas_tanding')
+            ->groupBy('nama_atlet', 'jk', 'cabang', 'golongan', 'kategori', 'kelas_tanding')
+            ->havingRaw('COUNT(*) > 1')
+            ->get();
+
+        return view('medali.medali-index', compact('medalis', 'emas', 'perak', 'perunggu', 'duplicates'));
     }
 
     /**
