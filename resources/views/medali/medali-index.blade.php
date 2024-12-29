@@ -22,7 +22,7 @@
                 </div>
             @else
                 <div class="alert alert-success">
-                    Tidak ada data duplicate.
+                    OTW Jemput kekasih (Juara Umum)
                 </div>
             @endif
 

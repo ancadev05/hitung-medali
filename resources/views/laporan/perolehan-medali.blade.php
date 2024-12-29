@@ -167,9 +167,19 @@
             </div>
         </section>
 
-        <section>
-
-        </section>
+        {{-- <section class="mb-4 card p-3">
+            <h4>Perolehan Setiap Cabang</h4>
+            <table class="table table-sm">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Cabang</th>
+                        <th>Medali</th>
+                    </tr>
+                    <tr></tr>
+                </thead>
+            </table>
+        </section> --}}
     </div>
 @endsection
 

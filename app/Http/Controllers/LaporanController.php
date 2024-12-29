@@ -63,7 +63,8 @@ class LaporanController extends Controller
         $dewasa_p_2 = $medalis->where('golongan', 'DEWASA')->where('jk', 'P')->where('medali', 2)->count();
         $dewasa_p_3 = $medalis->where('golongan', 'DEWASA')->where('jk', 'P')->where('medali', 3)->count();
 
-        // 
+        // perolehan setiap cabang
+        
 
         return view('laporan.perolehan-medali', compact(
             'medalis',
