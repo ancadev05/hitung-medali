@@ -16,8 +16,7 @@
                     <strong>Data Duplicates Ditemukan!</strong>
                     <ul>
                         @foreach ($duplicates as $duplicate)
-                            <li>{{ $duplicate->nama_atlet }} - {{ $duplicate->jk }} - {{ $duplicate->cabang }} -
-                                {{ $duplicate->golongan }} - {{ $duplicate->kategori }} - {{ $duplicate->kelas_tanding }}</li>
+                            <li>{{ $duplicate->nama_atlet }} / {{ $duplicate->jk }} / {{ $duplicate->cabang }} / {{ $duplicate->golongan }} / {{ $duplicate->kategori }} / {{ $duplicate->kelas_tanding }}</li>
                         @endforeach
                     </ul>
                 </div>
